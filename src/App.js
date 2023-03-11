@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import store from './store';
+import { decNumber, incNumber } from './actions';
 function App() {
   // const unsubscribe = store.subscribe(() => { console.log(store.getState()) })
   // store.dispatch({ type: 'increment' })
@@ -13,9 +14,9 @@ function App() {
   return (
     <div className="App">
       <h1>Counter</h1>
-      <button onClick={() => { store.dispatch({ type: 'increment' }) }}>+</button>
+      <button onClick={() => { store.dispatch(incNumber()) }}>+</button>
       <div>{counter}</div>
-      <button onClick={() => { store.dispatch({ type: 'decrement' }) }}>-</button>
+      <button onClick={() => { store.dispatch(decNumber()) }}>-</button>
       <p>Theme-{theme}</p>
       <button onClick={() => { theme === 'dark' ? store.dispatch({ type: 'light' }) : store.dispatch({ type: 'dark' }) }}>change theme</button>
     </div >
